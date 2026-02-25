@@ -1,4 +1,4 @@
-# mscp-skill
+# mscp-framework
 
 MSCP evaluation skill for trade-off analysis in product engineering decisions.
 
@@ -20,7 +20,7 @@ The right profile depends on context, horizon, and constraints.
 
 ## Required flow (before scoring)
 
-1. Declare the decision context and options.
+1. Declare context and mode (comparison, single-artifact review, investigation, discussion insight).
 2. Lock the optimization statement:
    - "We optimize for X over Y for next N months."
 3. Declare pillar weights (`M/S/C/P` totaling `100%`).
@@ -28,8 +28,8 @@ The right profile depends on context, horizon, and constraints.
 5. Run boundary checks (security is transversal and non-negotiable).
 6. Score `M/S/C/P` with evidence.
 7. Run contamination test (`S` vs `P` claim hygiene).
-8. Run two-perspective sensitivity pass (strategy-first and runtime-first).
-9. State rank-reversal conditions explicitly.
+8. Run sensitivity pass (strategy-first and runtime-first when ranking is contested).
+9. State rank-reversal conditions explicitly for comparison mode.
 
 ## Security model boundary
 
@@ -52,18 +52,28 @@ It is a transversal boundary constraint that must hold before trade-off scoring.
 
 - MSCP scorecard with evidence
 - Option comparison with explicit trade-offs
+- Single-artifact review memo (PR/code/design)
+- Investigation insight memo (bug/incident)
 - Recommendation with non-negotiables and revisit trigger
-- Rank-reversal conditions (when the recommendation should flip)
+- Rank-reversal conditions (for comparison decisions)
 
 ## Quick prompt starter
 
-Use this before asking for scoring:
+Use one of these before asking for scoring:
 
 ```text
 Evaluate Option A vs Option B using MSCP.
 Optimization statement: optimize provider switchability over short-term latency for next 12 months.
 Weights: M=25 S=45 C=20 P=10.
 Non-negotiables: OWASP baseline, no PII exposure, single provider abstraction.
+```
+
+```text
+Review this PR using MSCP.
+Mode: single-artifact review.
+Optimization statement: optimize safe migration over feature velocity for next 2 months.
+Weights: M=35 S=30 C=20 P=15.
+Non-negotiables: no PII exposure, rollback path is explicit.
 ```
 
 ## Changelog

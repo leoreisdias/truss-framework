@@ -1,8 +1,9 @@
 # MSCP Templates
 
-## Template: MSCP scorecard + recommendation (default)
+## Template: MSCP evaluation + recommendation (default)
 
-**Decision:** <what are we deciding?>
+**Mode:** <comparison | single-artifact review | investigation | discussion insight>
+**Decision / question:** <what are we deciding or investigating?>
 **Context:** <deadline pressure + constraints + definition of success>
 **Optimization statement (mandatory):** <we optimize for X over Y for next N months>
 **Weights (mandatory):** <M=% S=% C=% P=%; total=100%>
@@ -10,10 +11,11 @@
 - Security baseline: <OWASP/compliance/PII constraints that are non-negotiable>
 - Other non-negotiables: <platform/governance/migration constraints>
 
-**Options**
-- A: <…>
-- B: <…>
-- (C / Do nothing): <…>
+**Subject(s)**
+- Comparison mode: A, B, (C / Do nothing)
+- Single-artifact review mode: artifact name + scope
+- Investigation mode: hypotheses and current evidence
+- Discussion insight mode: claims and assumptions under evaluation
 
 **Scores (1–5)**
 - **M Maintainability:** <1–5>
@@ -30,7 +32,7 @@
   - Trade-off:
 
 **Recommendation**
-- Pick: <Option A/B/...>
+- Pick / conclusion: <Option A/B/... or prioritized actions>
 - Why: <2–5 bullets>
 - Non-negotiables: <tests/guardrails/rollout/measurement>
 - Rank-reversal conditions: <B beats A when ... ; A beats B when ...>
@@ -47,6 +49,34 @@
 
 **Call:** <A/B> because <…>. **Risk:** <…>. **Next step:** <…>.
 **Rank-reversal condition:** <when would this call flip?>
+
+## Template: Single-artifact review (code/PR/design)
+
+**Artifact:** <module/PR/design doc/decision record>
+**Objective:** <declared optimization target>
+**Scores (M/S/C/P):** <M=?, S=?, C=?, P=?>
+**Top findings:**
+- Strength:
+- Risk:
+- Hidden trade-off:
+**Recommended actions:**
+- Now:
+- Next:
+- Revisit trigger:
+
+## Template: Investigation insight memo (bug/incident)
+
+**Observed behavior:** <what happened>
+**Expected behavior:** <what should have happened>
+**Current hypothesis set:** <H1, H2, H3>
+**MSCP lens findings:**
+- M:
+- S:
+- C:
+- P:
+**Most likely cause direction:**
+**Next experiment / check:**
+**Decision risk if unresolved:**
 
 ## Template: PR mini-check (fast)
 

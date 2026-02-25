@@ -1,6 +1,6 @@
 # MSCP Checklists (fast)
 
-Use these when you need a quick pass (e.g., PR review). For anything sticky, switch to the MSCP brief.
+Use these when you need a quick pass (PR review, investigation, architecture discussion, or option comparison). For anything sticky, switch to the MSCP brief.
 
 ## M — Maintainability
 

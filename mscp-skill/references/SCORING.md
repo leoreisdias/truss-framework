@@ -10,6 +10,7 @@ Prefer evidence a teammate can quickly verify:
 - Navigability: “main flow is traceable from routes → loaders → views with consistent naming”
 - Constraints: “this adds a critical-path dependency; we need timeouts + fallback”
 - Operational reality: “p95 must stay under X; current baseline is Y”
+- Investigation evidence: logs, traces, incident timeline, failed assumptions, and reproduced behavior
 
 Avoid:
 
@@ -33,6 +34,17 @@ No MSCP scoring is valid until these are explicitly declared:
 3. **Non-negotiables:** constraints that must hold (for example, baseline security, platform boundaries, migration requirements).
 
 If any item is missing, stop and request it before producing scores.
+
+## Supported application modes
+
+MSCP is valid beyond option comparison:
+
+- **Comparison mode:** compare alternatives.
+- **Single-artifact review mode:** evaluate a current implementation/PR/design.
+- **Investigation mode:** evaluate hypotheses and findings during debugging or incidents.
+- **Discussion insight mode:** evaluate claims and tensions in architecture or strategy discussions.
+
+Mode affects inputs, but not pillar definitions.
 
 ## Boundary constraints before scoring
 
@@ -67,6 +79,8 @@ Compare rankings:
 - If ranking flips, document why and what assumption caused the reversal.
 - In either case, record **rank-reversal conditions** explicitly (“Option B beats A when ...; A beats B when ...”).
 
+For non-comparison modes, run a lighter sensitivity pass by varying priorities and checking whether conclusions or next actions change.
+
 ## The MSCP brief (one-page decision record)
 
 For non-trivial decisions (dependency, refactor, architecture, feature approach), write a short MSCP brief near the code (ADR-style).
@@ -74,10 +88,10 @@ For non-trivial decisions (dependency, refactor, architecture, feature approach)
 Minimal template:
 
 1. **Context:** what are we building, for whom, and what is the deadline pressure?
-2. **Options:** 2–4 real options (include “do nothing” when valid).
+2. **Subject(s):** comparison options, artifact under review, or investigation hypothesis set.
 3. **Trade-offs:** one paragraph per pillar (what improves, what worsens).
 4. **Risks:** what can fail, and what signal will tell us early?
-5. **Decision:** what we pick, what we intentionally give up, and when we will revisit.
+5. **Decision / insight:** what we pick or conclude, what we intentionally accept, and when we will revisit.
 
 ## Decide fast vs invest
 

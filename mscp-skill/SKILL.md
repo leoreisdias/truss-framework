@@ -1,6 +1,6 @@
 ---
 name: mscp-evaluation
-description: Evaluate and compare solutions using MSCP (Maintainability, Strategy, Clarity, Performance). Use when the user asks “which approach is better?”, wants trade-off analysis, scoring, a structured critique of code/architecture/PRs, or a decision record that is explicit about trade-offs and future constraints.
+description: Evaluate decision quality using MSCP (Maintainability, Strategy, Clarity, Performance) across option comparison, code/PR review, bug or incident investigation, architecture discussion, and decision records. Use when the user asks “which approach is better?”, requests a structured critique, or needs explicit trade-offs and next-step guidance.
 ---
 
 # MSCP Evaluation
@@ -9,12 +9,13 @@ MSCP is a language for discussing software-quality trade-offs in real product te
 
 ## Quick start
 
-1. Ask for the decision context (deadline pressure, constraints, and what “success” means).
-2. If there are options, insist on **2–4 real options** (including “do nothing” when valid).
-3. Lock the optimization statement: “We optimize for X over Y for next N months.”
-4. Declare pillar weights and non-negotiables before scoring.
-5. Score **M/S/C/P from 1-5** with evidence (avoid vague claims like “clean” or “scalable”).
-6. Write a recommendation that explicitly states what you’re **optimizing for** and what you’re **accepting** as a trade-off.
+1. Ask for the context (deadline pressure, constraints, and what “success” means).
+2. Select mode: **comparison**, **single-artifact review**, **investigation**, or **discussion insight**.
+3. If in comparison mode, insist on **2–4 real options** (including “do nothing” when valid).
+4. Lock the optimization statement: “We optimize for X over Y for next N months.”
+5. Declare pillar weights and non-negotiables before scoring.
+6. Score **M/S/C/P from 1-5** with evidence (avoid vague claims like “clean” or “scalable”).
+7. Write a recommendation or insight summary that states what we’re optimizing for and which trade-offs we are accepting.
 
 ## Pillars (canonical names)
 
@@ -25,22 +26,26 @@ MSCP is a language for discussing software-quality trade-offs in real product te
 
 ## Workflow
 
-1. **Clarify intent:** what decision are we making (PR, refactor, dependency, architecture, feature approach)?
+1. **Clarify intent and mode:** comparison, single-artifact review, investigation, or discussion insight.
 2. **State constraints:** deadline pressure, team size, runtime/SLO constraints, risk tolerance.
 3. **Define success first (mandatory):** write the optimization statement, horizon, pillar weights, and non-negotiables.
-4. **List options:** 2–4 plausible options with the minimum detail needed to compare.
+4. **Prepare inputs by mode:**
+   - comparison: list 2–4 options with concise option notes,
+   - single-artifact review: define artifact scope + expected behavior,
+   - investigation: define observed evidence + current hypothesis,
+   - discussion insight: define claims, assumptions, and unresolved tensions.
 5. **Run boundary checks:** enforce non-negotiable constraints (for example, security baseline) before scoring.
 6. **Run pillar contamination test:** keep Strategy claims out of runtime concerns, and Performance claims out of strategic optionality.
 7. **Evaluate MSCP:** score each pillar 1-5 with evidence bullets.
-8. **Run sensitivity pass:** re-score from strategy-first and runtime-first perspectives; check if ranking stays stable.
-9. **Recommend:** choose an option, call out non-negotiables, rank-reversal conditions, and next steps (tests, rollout, measurement, revisit date).
+8. **Run sensitivity pass (when relevant):** re-score from strategy-first and runtime-first perspectives when ranking or priority is contested.
+9. **Recommend / summarize insights:** give next actions, non-negotiables, and rank-reversal conditions when options are being compared.
 
 ## References (read only what you need)
 
 - `references/OVERVIEW.md`: what MSCP is/isn’t, when to use it, and its naming context.
 - `references/RUBRIC.md`: the 1–5 rubric per pillar (signals, alerts, what “good” looks like).
 - `references/SCORING.md`: how to score consistently and write falsifiable trade-offs.
-- `references/TEMPLATES.md`: ready-to-use templates (scorecard, option comparison, PR mini-check, ADR).
+- `references/TEMPLATES.md`: ready-to-use templates (evaluation scorecard, option comparison, single-artifact review, investigation insight memo, PR mini-check, ADR).
 - `references/EXAMPLES.md`: worked examples with scores + rationale.
 - `references/ANTI-PATTERNS.md`: common ways MSCP gets misused and how to avoid them.
 - `references/CHECKLISTS.md`: fast checklists per pillar.

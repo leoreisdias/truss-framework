@@ -4,7 +4,7 @@ All notable changes to this repository are documented in this file.
 
 The format follows Keep a Changelog principles, adapted for this skill repository.
 
-## [Unreleased]
+## [0.2.1] - 2026-02-25
 
 ### Added
 
@@ -16,36 +16,27 @@ The format follows Keep a Changelog principles, adapted for this skill repositor
 - Two-perspective sensitivity pass template (strategy-first and runtime-first).
 - Rank-reversal condition requirement in recommendations.
 - Benchmark-style leakage example showing how rankings flip under different priorities.
+- New usage templates for non-comparison workflows:
+  - single-artifact review (code/PR/design)
+  - investigation insight memo (bug/incident)
+  - mode-aware default evaluation template
 
 ### Changed
 
 - `SKILL.md` quick start and workflow now enforce process guards before scoring.
 - Templates and checklists now include objective lock, weighting, contamination checks, and stability checks.
 - Anti-pattern catalog expanded with objective drift, pillar leakage, and rank-reversal blindness.
+- Skill scope clarified beyond option comparison: supports decisions, reviews, investigations, and discussion insights.
+- Scoring brief input generalized from "Options" to "Subject(s)" to fit comparison and non-comparison evaluations.
+- Agent metadata and README now reflect mode-first usage (comparison vs single artifact vs hypothesis/investigation).
 
-### Fixed
-
-- Clarity definition wording normalized to "a competent engineer".
-
-## [0.3.0] - 2026-02-25
+## [0.2.0] - 2026-02-25
 
 ### Added
 
 - Security as a transversal boundary constraint (not a fifth pillar).
 - Security baseline gate ("not score-eligible" until baseline compliance).
 - Security-oriented checklist items and worked example.
-
-## [0.2.0] - 2026-02-25
-
-### Changed
-
-- Framework renamed from MELP to MSCP.
-- Pillars updated to:
-  - Maintainability (M)
-  - Strategy (S)
-  - Clarity (C)
-  - Performance (P)
-- Terminology normalized across skill, templates, rubrics, and examples.
 
 ## [0.1.0] - 2026-02-24
 
