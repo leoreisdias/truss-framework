@@ -7,7 +7,7 @@ These examples are intentionally small. The point is to show how to write **evid
 **Decision:** Improve p95 latency on a frequently-hit endpoint.
 **Options:** (A) Add cache with TTL + explicit invalidation path, (B) Add DB index + query rewrite, (C) Do nothing.
 
-**Scores (1–5)**
+**Scores (0–5)**
 - **M:** 3 — cache adds invalidation paths and more moving parts.
 - **S:** 4 — combines quick win (TTL) with a plan to move to a more durable fix.
 - **C:** 3 — more branches; the mental model is slower to construct without stronger structure notes.
@@ -20,7 +20,7 @@ These examples are intentionally small. The point is to show how to write **evid
 **Decision:** Use a vendor API for a core capability.
 **Options:** (A) Vendor API now, (B) Build in-house, (C) Hybrid adapter with fallback.
 
-**Scores (1–5)**
+**Scores (0–5)**
 - **M:** 4 — adapter pattern localizes changes.
 - **S:** 5 — hybrid keeps paths open and reduces lock-in risk.
 - **C:** 4 — clear boundary (`VendorClient`, `DomainService`) keeps the decision scope understandable and code navigable.
@@ -33,7 +33,7 @@ These examples are intentionally small. The point is to show how to write **evid
 **Decision:** Reduce change blast-radius in a large module.
 **Options:** (A) Extract bounded modules incrementally, (B) Big-bang rewrite, (C) Leave it.
 
-**Scores (1–5)**
+**Scores (0–5)**
 - **M:** 5 — incremental boundaries reduce future surgery.
 - **S:** 4 — preserves shipping while improving architecture; set checkpoints.
 - **C:** 4 — module naming + file focus improves mental-model accuracy and speed.
@@ -46,7 +46,7 @@ These examples are intentionally small. The point is to show how to write **evid
 **Decision:** Add a new abstraction to “standardize” a pattern.
 **Options:** (A) Add abstraction now, (B) Keep it direct, (C) Extract only shared helpers.
 
-**Scores (1–5)**
+**Scores (0–5)**
 - **M:** 3 — abstraction can help later, but adds surface area now.
 - **S:** 2 — unclear future need; risks locking design too early.
 - **C:** 2 — extra indirection makes the decision scope harder to model correctly.
@@ -63,7 +63,7 @@ These examples are intentionally small. The point is to show how to write **evid
 - Current option (A) fails baseline security (PII exposure risk and incomplete OWASP controls).
 - Result: option (A) is **not score-eligible** until remediation is in place.
 
-**Scores (1–5) after baseline-compliant options only**
+**Scores (0–5) after baseline-compliant options only**
 - **M:** 3 — policy and redaction layer adds maintenance overhead, but changes stay localized.
 - **S:** 4 — option (B) preserves launch intent while reducing regulatory exposure.
 - **C:** 4 — explicit redaction boundaries improve decision-scope comprehension.

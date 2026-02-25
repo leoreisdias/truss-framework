@@ -17,6 +17,7 @@ Instead of arguing in adjectives ("clean", "scalable"), the skill pushes evidenc
 
 Quality is a decision problem, not a static property.  
 The right profile depends on context, horizon, and constraints.
+Scoring is optional: use it when ranking helps; otherwise keep a narrative trade-off memo.
 
 ## Required flow (before scoring)
 
@@ -26,7 +27,9 @@ The right profile depends on context, horizon, and constraints.
 3. Declare pillar weights (`M/S/C/P` totaling `100%`).
 4. Declare non-negotiables (security baseline, migration constraints, governance constraints).
 5. Run boundary checks (security is transversal and non-negotiable).
-6. Score `M/S/C/P` with evidence.
+6. Evaluate with evidence per pillar (`M/S/C/P`) using either:
+   - a `0–5` scorecard (when scoring inputs are complete), or
+   - a narrative trade-off memo (no numeric scores).
 7. Run contamination test (`S` vs `P` claim hygiene).
 8. Run sensitivity pass (strategy-first and runtime-first when ranking is contested).
 9. State rank-reversal conditions explicitly for comparison mode.
@@ -41,7 +44,7 @@ It is a transversal boundary constraint that must hold before trade-off scoring.
 - `SKILL.md`: trigger + workflow entry point
 - `agents/openai.yaml`: UI metadata
 - `references/OVERVIEW.md`: framework intent and boundaries
-- `references/RUBRIC.md`: 1-5 rubric by pillar
+- `references/RUBRIC.md`: 0-5 rubric by pillar
 - `references/SCORING.md`: scoring process and gates
 - `references/TEMPLATES.md`: reusable output templates
 - `references/CHECKLISTS.md`: fast execution checklists

@@ -17,25 +17,35 @@
 - Investigation mode: hypotheses and current evidence
 - Discussion insight mode: claims and assumptions under evaluation
 
-**Scores (1–5)**
-- **M Maintainability:** <1–5>
+**Output style**
+- Scorecard (default when optimization statement + weights + non-negotiables are complete)
+- Narrative trade-off memo (no numeric scores)
+
+**Scores (0–5, scorecard mode)**
+- **M Maintainability:** <0–5>
   - Evidence:
   - Trade-off:
-- **S Strategy:** <1-5>
+- **S Strategy:** <0-5>
   - Evidence:
   - Trade-off:
-- **C Clarity:** <1-5>
+- **C Clarity:** <0-5>
   - Evidence:
   - Trade-off:
-- **P Performance:** <1–5>
+- **P Performance:** <0–5>
   - Evidence:
   - Trade-off:
+
+**Trade-off statements (narrative mode)**
+- **M:** <falsifiable trade-off statement>
+- **S:** <falsifiable trade-off statement>
+- **C:** <falsifiable trade-off statement>
+- **P:** <falsifiable trade-off statement>
 
 **Recommendation**
 - Pick / conclusion: <Option A/B/... or prioritized actions>
 - Why: <2–5 bullets>
 - Non-negotiables: <tests/guardrails/rollout/measurement>
-- Rank-reversal conditions: <B beats A when ... ; A beats B when ...>
+- Rank-reversal conditions (comparison mode): <B beats A when ... ; A beats B when ...>
 - Revisit: <date or trigger>
 
 ## Template: Option A vs B comparison (short)

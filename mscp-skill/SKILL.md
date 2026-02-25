@@ -14,8 +14,9 @@ MSCP is a language for discussing software-quality trade-offs in real product te
 3. If in comparison mode, insist on **2–4 real options** (including “do nothing” when valid).
 4. Lock the optimization statement: “We optimize for X over Y for next N months.”
 5. Declare pillar weights and non-negotiables before scoring.
-6. Score **M/S/C/P from 1-5** with evidence (avoid vague claims like “clean” or “scalable”).
-7. Write a recommendation or insight summary that states what we’re optimizing for and which trade-offs we are accepting.
+6. Choose output style: **scorecard** (default when scoring inputs are complete) or **narrative trade-off memo** (no numeric scores).
+7. If using scorecard, score **M/S/C/P from 0-5** with evidence (avoid vague claims like “clean” or “scalable”).
+8. Write a recommendation or insight summary that states what we’re optimizing for and which trade-offs we are accepting.
 
 ## Pillars (canonical names)
 
@@ -28,7 +29,7 @@ MSCP is a language for discussing software-quality trade-offs in real product te
 
 1. **Clarify intent and mode:** comparison, single-artifact review, investigation, or discussion insight.
 2. **State constraints:** deadline pressure, team size, runtime/SLO constraints, risk tolerance.
-3. **Define success first (mandatory):** write the optimization statement, horizon, pillar weights, and non-negotiables.
+3. **Define success first (mandatory for scored outputs):** write the optimization statement, horizon, pillar weights, and non-negotiables.
 4. **Prepare inputs by mode:**
    - comparison: list 2–4 options with concise option notes,
    - single-artifact review: define artifact scope + expected behavior,
@@ -36,14 +37,16 @@ MSCP is a language for discussing software-quality trade-offs in real product te
    - discussion insight: define claims, assumptions, and unresolved tensions.
 5. **Run boundary checks:** enforce non-negotiable constraints (for example, security baseline) before scoring.
 6. **Run pillar contamination test:** keep Strategy claims out of runtime concerns, and Performance claims out of strategic optionality.
-7. **Evaluate MSCP:** score each pillar 1-5 with evidence bullets.
+7. **Evaluate MSCP:**
+   - scorecard mode: score each pillar 0–5 with evidence bullets,
+   - narrative mode: write one falsifiable trade-off statement per pillar without numeric scoring.
 8. **Run sensitivity pass (when relevant):** re-score from strategy-first and runtime-first perspectives when ranking or priority is contested.
 9. **Recommend / summarize insights:** give next actions, non-negotiables, and rank-reversal conditions when options are being compared.
 
 ## References (read only what you need)
 
 - `references/OVERVIEW.md`: what MSCP is/isn’t, when to use it, and its naming context.
-- `references/RUBRIC.md`: the 1–5 rubric per pillar (signals, alerts, what “good” looks like).
+- `references/RUBRIC.md`: the 0–5 rubric per pillar (signals, alerts, what “good” looks like).
 - `references/SCORING.md`: how to score consistently and write falsifiable trade-offs.
 - `references/TEMPLATES.md`: ready-to-use templates (evaluation scorecard, option comparison, single-artifact review, investigation insight memo, PR mini-check, ADR).
 - `references/EXAMPLES.md`: worked examples with scores + rationale.

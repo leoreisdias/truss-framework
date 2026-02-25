@@ -4,6 +4,14 @@ All notable changes to this repository are documented in this file.
 
 The format follows Keep a Changelog principles, adapted for this skill repository.
 
+## [0.2.2] - 2026-02-25
+
+### Changed
+
+- Scoring is now explicitly optional across skill workflow and templates; narrative trade-off memos are first-class outputs when ranking is unnecessary.
+- Canonical score scale aligned to the framework mirror: `0–5` (with `0` reserved for absent evidence / not score-eligible context).
+- Agent prompt and README now describe dual output behavior: scored (`0–5`) or narrative (no numeric score).
+
 ## [0.2.1] - 2026-02-25
 
 ### Added

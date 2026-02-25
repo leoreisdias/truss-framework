@@ -14,7 +14,7 @@
 
 **Countermeasure**
 - Put evidence next to each score.
-- Treat scores as coarse signals (1–5), not precision.
+- Treat scores as coarse signals (0–5), not precision.
 - If the rationale is weak, the score is invalid.
 
 ## Purity traps (“ideal architecture” over product reality)

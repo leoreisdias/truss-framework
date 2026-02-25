@@ -2,6 +2,21 @@
 
 MSCP works when it replaces adjectives with **evidence** and **falsifiable statements**.
 
+## Scoring is optional (discipline is not)
+
+- Use scoring when ranking or prioritization would benefit from a coarse numeric view.
+- If ranking is not needed, use a **narrative trade-off memo** (no numeric scores) with one falsifiable statement per pillar.
+- Never force scores by inventing weights or constraints that were not declared.
+
+## Canonical score scale (single source)
+
+In this repository, numeric MSCP scoring uses a **0–5 scale**:
+
+- **0:** absent evidence, blocked baseline, or not score-eligible yet
+- **1:** weak in-context outcome
+- **3:** acceptable/uncertain middle
+- **5:** strong in-context outcome
+
 ## Evidence standards (what “counts”)
 
 Prefer evidence a teammate can quickly verify:
@@ -21,7 +36,7 @@ Avoid:
 ## Calibration rules
 
 - **Score relative to the current context**, not a hypothetical ideal.
-- Use **1–5** as a coarse signal; do not pretend precision.
+- Use **0–5** as a coarse signal; do not pretend precision.
 - If you can’t justify a number, write the trade-off first, then infer the score.
 - When uncertain, prefer **3** and list what you’d need to learn to move it up/down.
 
@@ -34,6 +49,7 @@ No MSCP scoring is valid until these are explicitly declared:
 3. **Non-negotiables:** constraints that must hold (for example, baseline security, platform boundaries, migration requirements).
 
 If any item is missing, stop and request it before producing scores.
+If scoring inputs are missing, return a narrative trade-off memo plus the missing-input list.
 
 ## Supported application modes
 

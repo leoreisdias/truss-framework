@@ -1,6 +1,6 @@
-# MSCP Rubric (1-5)
+# MSCP Rubric (0-5)
 
-Use this rubric to score each pillar from **1 (weak)** to **5 (excellent)**. The goal is consistency and evidence, not perfection.
+Use this rubric to score each pillar from **0 (absent/not score-eligible in context)** to **5 (excellent)**. The goal is consistency and evidence, not perfection.
 
 ## M — Maintainability (DX)
 
@@ -17,6 +17,7 @@ Use this rubric to score each pillar from **1 (weak)** to **5 (excellent)**. The
 - Patchwork shortcuts and accidental complexity.
 
 **Scoring guide**
+- **0:** Not score-eligible yet (missing evidence or blocked by baseline constraints).
 - **1:** Changes routinely cascade; confidence is low; boundaries are unclear.
 - **3:** Most changes are manageable; some hotspots are risky or poorly covered.
 - **5:** Changes are predictable and cheap; tests + boundaries make refactors safe.
@@ -36,6 +37,7 @@ Use this rubric to score each pillar from **1 (weak)** to **5 (excellent)**. The
 - High cost to change direction.
 
 **Scoring guide**
+- **0:** Not score-eligible yet (missing evidence or blocked by baseline constraints).
 - **1:** The approach “works now” but creates obvious future traps.
 - **3:** Reasonable path with some extension story; a few risks remain unmitigated.
 - **5:** Clear rationale + future-proofing where it matters; explicit revisit points.
@@ -55,6 +57,7 @@ Use this rubric to score each pillar from **1 (weak)** to **5 (excellent)**. The
 - Abstraction-by-fear: layers of indirection to avoid choosing a model.
 
 **Scoring guide**
+- **0:** Not score-eligible yet (missing evidence or blocked by baseline constraints).
 - **1:** A reviewer can’t follow the main flow without opening many files and guessing intent.
 - **3:** The main flow is discoverable; a few areas are confusing or overly indirect.
 - **5:** The system is navigable; intent is obvious; indirection is minimal and justified.
@@ -74,6 +77,7 @@ Use this rubric to score each pillar from **1 (weak)** to **5 (excellent)**. The
 - Micro-optimizations without measurement.
 
 **Scoring guide**
+- **0:** Not score-eligible yet (missing evidence or blocked by baseline constraints).
 - **1:** Performance risks are unknown/ignored; likely bottlenecks are unbounded.
 - **3:** Basic guardrails exist; some uncertainty remains about real bottlenecks.
 - **5:** Clear targets + measurement; predictable behavior under load; safe failure modes.
