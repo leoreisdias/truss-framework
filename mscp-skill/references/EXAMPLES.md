@@ -70,3 +70,30 @@ These examples are intentionally small. The point is to show how to write **evid
 - **P:** 3 — runtime overhead from protection steps is measurable and acceptable.
 
 **Recommendation:** Choose (B), enforce baseline controls first, then optimize performance. Do not let runtime concerns override the declared objective or security boundary.
+
+## Example 6: Strategy vs Performance leakage benchmark
+
+**Decision:** Pick architecture for provider orchestration in a hybrid Pages+App environment.
+**Declared objective:** Optimize for provider switchability and governance over raw client latency for next 12 months.
+**Non-negotiables:** single provider abstraction, shared evaluation surface, security baseline unchanged.
+**Options:** (A) Direct per-provider adapters in UI, (B) Unified orchestration layer, (C) Keep current mixed path.
+
+**Common leakage failure (what not to do)**
+- Score (A) high in **Strategy** because UI path appears faster.
+- This is contamination: “fewer hops/faster path” is primarily **Performance**, not **Strategy** under the declared objective.
+
+**Corrected scores (after contamination test)**
+- **M:** A=3, B=4, C=2
+- **S:** A=2, B=5, C=2
+- **C:** A=3, B=4, C=2
+- **P:** A=4, B=3, C=2
+
+**Sensitivity pass**
+- **Strategy-first weights** (M=25, S=45, C=20, P=10): winner = **B**
+- **Runtime-first weights** (M=20, S=20, C=20, P=40): winner = **A**
+
+**Rank-reversal conditions**
+- **B beats A when** switchability/governance and cross-provider consistency are primary for the horizon.
+- **A beats B when** short-term runtime latency dominates and provider optionality is de-prioritized.
+
+**Recommendation:** Choose B for the declared objective. If the objective changes to latency-first delivery, re-open with runtime-first weighting and re-rank.

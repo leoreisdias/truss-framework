@@ -16,6 +16,7 @@ Use these when you need a quick pass (e.g., PR review). For anything sticky, swi
 - Is there an extension/migration story?
 - What’s plan B if the choice fails (rollback, adapter, fallback)?
 - Are regulatory/security risks explicit and accepted (or mitigated) before scoring?
+- Are we scoring against the declared objective and horizon, not generic defaults?
 
 ## C — Clarity
 
@@ -36,3 +37,20 @@ Use these when you need a quick pass (e.g., PR review). For anything sticky, swi
 
 - Does the option meet the non-negotiable security baseline (for example, OWASP requirements and no PII exposure)?
 - If baseline security fails, did we stop and fix compliance before M/S/C/P scoring?
+
+## Pre-scoring required inputs
+
+- Did we declare an optimization statement (“optimize X over Y for next N months”)?
+- Did we declare pillar weights (M/S/C/P totaling 100%)?
+- Did we declare non-negotiables beyond security (platform, governance, migration)?
+
+## Pillar contamination test
+
+- For each Strategy claim, ask: is this actually runtime behavior (latency/throughput/cost)?
+- For each Performance claim, ask: is this actually optionality/governance/migration?
+- Did we reclassify contaminated claims before final scoring?
+
+## Sensitivity and rank reversal
+
+- Did we run at least one strategy-first and one runtime-first pass?
+- If ranking flipped, did we document rank-reversal conditions explicitly?

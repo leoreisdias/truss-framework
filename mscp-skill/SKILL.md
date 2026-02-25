@@ -11,8 +11,10 @@ MSCP is a language for discussing software-quality trade-offs in real product te
 
 1. Ask for the decision context (deadline pressure, constraints, and what “success” means).
 2. If there are options, insist on **2–4 real options** (including “do nothing” when valid).
-3. Score **M/S/C/P from 1-5** with evidence (avoid vague claims like “clean” or “scalable”).
-4. Write a recommendation that explicitly states what you’re **optimizing for** and what you’re **accepting** as a trade-off.
+3. Lock the optimization statement: “We optimize for X over Y for next N months.”
+4. Declare pillar weights and non-negotiables before scoring.
+5. Score **M/S/C/P from 1-5** with evidence (avoid vague claims like “clean” or “scalable”).
+6. Write a recommendation that explicitly states what you’re **optimizing for** and what you’re **accepting** as a trade-off.
 
 ## Pillars (canonical names)
 
@@ -25,9 +27,13 @@ MSCP is a language for discussing software-quality trade-offs in real product te
 
 1. **Clarify intent:** what decision are we making (PR, refactor, dependency, architecture, feature approach)?
 2. **State constraints:** deadline pressure, team size, runtime/SLO constraints, risk tolerance.
-3. **List options:** 2–4 plausible options with the minimum detail needed to compare.
-4. **Evaluate MSCP:** score each pillar 1-5 with a few evidence bullets.
-5. **Recommend:** choose an option, call out the non-negotiables, and propose next steps (tests, rollout, measurement, revisit date).
+3. **Define success first (mandatory):** write the optimization statement, horizon, pillar weights, and non-negotiables.
+4. **List options:** 2–4 plausible options with the minimum detail needed to compare.
+5. **Run boundary checks:** enforce non-negotiable constraints (for example, security baseline) before scoring.
+6. **Run pillar contamination test:** keep Strategy claims out of runtime concerns, and Performance claims out of strategic optionality.
+7. **Evaluate MSCP:** score each pillar 1-5 with evidence bullets.
+8. **Run sensitivity pass:** re-score from strategy-first and runtime-first perspectives; check if ranking stays stable.
+9. **Recommend:** choose an option, call out non-negotiables, rank-reversal conditions, and next steps (tests, rollout, measurement, revisit date).
 
 ## References (read only what you need)
 
