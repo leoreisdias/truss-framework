@@ -1,6 +1,6 @@
-# MSCP Anti-patterns
+# Truss Anti-patterns
 
-## Turning MSCP into a checklist
+## Turning Truss into a checklist
 
 **Symptom:** “We checked the boxes” replaces a real trade-off discussion.
 

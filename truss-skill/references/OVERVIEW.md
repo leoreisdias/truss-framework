@@ -1,16 +1,16 @@
-# MSCP Overview
+# Truss Overview
 
-MSCP is a language for discussing software-quality trade-offs in real product teams. It treats “quality” as a **decision problem**, not a fixed property: constraints change, so the weights change.
+Truss is a framework for discussing software-quality trade-offs in real product teams. It treats “quality” as a **decision problem**, not a fixed property: constraints change, so the weights change.
 
-Use **MSCP** as the canonical acronym in this repo.
+Use **Truss** as the framework name in this repo. Use **M·S·C·P** only as the internal vocabulary for the four pillars.
 
-## What MSCP is
+## What Truss is
 
 - A way to replace vague adjectives (“clean”, “scalable”) with **falsifiable trade-off statements**.
 - A shared agenda for PRs, RFCs, incidents, and planning.
 - A tool for choosing a **coherent profile** (fit-to-context) instead of chasing “10/10 on every axis”.
 
-## What MSCP is not
+## What Truss is not
 
 - Not a checklist that “approves” work.
 - Not a scoring game that replaces judgment or evidence.
@@ -25,7 +25,7 @@ Use **MSCP** as the canonical acronym in this repo.
 
 ## Security as a transversal boundary constraint
 
-Security is intentionally not a fifth pillar. In practice, it behaves less like a tradeable axis and more like a boundary constraint: a non-negotiable baseline (for example, OWASP requirements and no PII exposure) that must hold regardless of optimization. Security concerns typically surface through Strategy (risk posture, regulatory exposure) and Performance (runtime cost of protections). Treating Security as transversal preserves MSCP's conceptual clarity and avoids overlap.
+Security is intentionally not a fifth pillar. In practice, it behaves less like a tradeable axis and more like a boundary constraint: a non-negotiable baseline (for example, OWASP requirements and no PII exposure) that must hold regardless of optimization. Security concerns typically surface through Strategy (risk posture, regulatory exposure) and Performance (runtime cost of protections). Treating Security as transversal preserves Truss's conceptual clarity and avoids overlap.
 
 ## Tension is the point
 

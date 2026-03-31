@@ -1,3 +1,0 @@
-display_name: MSCP Evaluation
-short_description: Evaluate decisions, reviews, and investigations with Maintainability, Strategy, Clarity, and Performance trade-offs.
-default_prompt: Use MSCP to evaluate this context (comparison, review, investigation, or discussion): apply constraints and trade-off analysis, then return either a 0–5 M/S/C/P scorecard (when inputs are complete) or a narrative trade-off memo with concrete recommendations.

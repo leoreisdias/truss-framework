@@ -1,4 +1,4 @@
-# MSCP Worked Examples
+# Truss Worked Examples
 
 These examples are intentionally small. The point is to show how to write **evidence-based trade-offs**, not to “win” on every pillar.
 

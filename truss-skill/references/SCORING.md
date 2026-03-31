@@ -1,6 +1,6 @@
-# Scoring MSCP Consistently
+# Scoring Truss Consistently
 
-MSCP works when it replaces adjectives with **evidence** and **falsifiable statements**.
+Truss works when it replaces adjectives with **evidence** and **falsifiable statements**.
 
 ## Scoring is optional (discipline is not)
 
@@ -10,7 +10,7 @@ MSCP works when it replaces adjectives with **evidence** and **falsifiable state
 
 ## Canonical score scale (single source)
 
-In this repository, numeric MSCP scoring uses a **0–5 scale**:
+In this repository, numeric Truss scoring uses a **0–5 scale**:
 
 - **0:** absent evidence, blocked baseline, or not score-eligible yet
 - **1:** weak in-context outcome
@@ -42,7 +42,7 @@ Avoid:
 
 ## Define success first (mandatory before scoring)
 
-No MSCP scoring is valid until these are explicitly declared:
+No Truss scoring is valid until these are explicitly declared:
 
 1. **Optimization statement:** “We optimize for X over Y for next N months.”
 2. **Pillar weights:** M/S/C/P percentages summing to 100%.
@@ -53,7 +53,7 @@ If scoring inputs are missing, return a narrative trade-off memo plus the missin
 
 ## Supported application modes
 
-MSCP is valid beyond option comparison:
+Truss is valid beyond option comparison:
 
 - **Comparison mode:** compare alternatives.
 - **Single-artifact review mode:** evaluate a current implementation/PR/design.
@@ -97,9 +97,9 @@ Compare rankings:
 
 For non-comparison modes, run a lighter sensitivity pass by varying priorities and checking whether conclusions or next actions change.
 
-## The MSCP brief (one-page decision record)
+## The Truss brief (one-page decision record)
 
-For non-trivial decisions (dependency, refactor, architecture, feature approach), write a short MSCP brief near the code (ADR-style).
+For non-trivial decisions (dependency, refactor, architecture, feature approach), write a short Truss brief near the code (ADR-style).
 
 Minimal template:
 

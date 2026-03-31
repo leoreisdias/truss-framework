@@ -1,10 +1,10 @@
-# mscp-framework
+# truss-framework
 
-MSCP evaluation skill for trade-off analysis in product engineering decisions.
+Truss evaluation skill for trade-off analysis in product engineering decisions.
 
 ## What this skill does
 
-MSCP gives teams a shared, falsifiable language for decision quality:
+Truss gives teams a shared, falsifiable language for decision quality:
 
 - **M**aintainability
 - **S**trategy
@@ -53,7 +53,7 @@ It is a transversal boundary constraint that must hold before trade-off scoring.
 
 ## Typical outputs
 
-- MSCP scorecard with evidence
+- Truss scorecard with evidence
 - Option comparison with explicit trade-offs
 - Single-artifact review memo (PR/code/design)
 - Investigation insight memo (bug/incident)
@@ -65,14 +65,14 @@ It is a transversal boundary constraint that must hold before trade-off scoring.
 Use one of these before asking for scoring:
 
 ```text
-Evaluate Option A vs Option B using MSCP.
+Evaluate Option A vs Option B using Truss.
 Optimization statement: optimize provider switchability over short-term latency for next 12 months.
 Weights: M=25 S=45 C=20 P=10.
 Non-negotiables: OWASP baseline, no PII exposure, single provider abstraction.
 ```
 
 ```text
-Review this PR using MSCP.
+Review this PR using Truss.
 Mode: single-artifact review.
 Optimization statement: optimize safe migration over feature velocity for next 2 months.
 Weights: M=35 S=30 C=20 P=15.

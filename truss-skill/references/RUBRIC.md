@@ -1,4 +1,4 @@
-# MSCP Rubric (0-5)
+# Truss Rubric (0-5)
 
 Use this rubric to score each pillar from **0 (absent/not score-eligible in context)** to **5 (excellent)**. The goal is consistency and evidence, not perfection.
 

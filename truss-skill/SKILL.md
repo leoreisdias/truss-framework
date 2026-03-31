@@ -1,11 +1,11 @@
 ---
-name: mscp-evaluation
-description: Evaluate decision quality using MSCP (Maintainability, Strategy, Clarity, Performance) across option comparison, code/PR review, bug or incident investigation, architecture discussion, and decision records. Use when the user asks “which approach is better?”, requests a structured critique, or needs explicit trade-offs and next-step guidance.
+name: truss-evaluation
+description: Evaluate decision quality using Truss, organized around Maintainability, Strategy, Clarity, and Performance, across option comparison, code/PR review, bug or incident investigation, architecture discussion, and decision records. Use when the user asks “which approach is better?”, requests a structured critique, or needs explicit trade-offs and next-step guidance.
 ---
 
-# MSCP Evaluation
+# Truss Evaluation
 
-MSCP is a language for discussing software-quality trade-offs in real product teams.
+Truss is a framework for discussing software-quality trade-offs in real product teams.
 
 ## Quick start
 
@@ -37,7 +37,7 @@ MSCP is a language for discussing software-quality trade-offs in real product te
    - discussion insight: define claims, assumptions, and unresolved tensions.
 5. **Run boundary checks:** enforce non-negotiable constraints (for example, security baseline) before scoring.
 6. **Run pillar contamination test:** keep Strategy claims out of runtime concerns, and Performance claims out of strategic optionality.
-7. **Evaluate MSCP:**
+7. **Evaluate Truss:**
    - scorecard mode: score each pillar 0–5 with evidence bullets,
    - narrative mode: write one falsifiable trade-off statement per pillar without numeric scoring.
 8. **Run sensitivity pass (when relevant):** re-score from strategy-first and runtime-first perspectives when ranking or priority is contested.
@@ -45,10 +45,10 @@ MSCP is a language for discussing software-quality trade-offs in real product te
 
 ## References (read only what you need)
 
-- `references/OVERVIEW.md`: what MSCP is/isn’t, when to use it, and its naming context.
+- `references/OVERVIEW.md`: what Truss is/isn’t, when to use it, and its naming context.
 - `references/RUBRIC.md`: the 0–5 rubric per pillar (signals, alerts, what “good” looks like).
 - `references/SCORING.md`: how to score consistently and write falsifiable trade-offs.
 - `references/TEMPLATES.md`: ready-to-use templates (evaluation scorecard, option comparison, single-artifact review, investigation insight memo, PR mini-check, ADR).
 - `references/EXAMPLES.md`: worked examples with scores + rationale.
-- `references/ANTI-PATTERNS.md`: common ways MSCP gets misused and how to avoid them.
+- `references/ANTI-PATTERNS.md`: common ways Truss gets misused and how to avoid them.
 - `references/CHECKLISTS.md`: fast checklists per pillar.

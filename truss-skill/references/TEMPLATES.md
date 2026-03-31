@@ -1,6 +1,6 @@
-# MSCP Templates
+# Truss Templates
 
-## Template: MSCP evaluation + recommendation (default)
+## Template: Truss evaluation + recommendation (default)
 
 **Mode:** <comparison | single-artifact review | investigation | discussion insight>
 **Decision / question:** <what are we deciding or investigating?>
@@ -79,7 +79,7 @@
 **Observed behavior:** <what happened>
 **Expected behavior:** <what should have happened>
 **Current hypothesis set:** <H1, H2, H3>
-**MSCP lens findings:**
+**Truss lens findings:**
 - M:
 - S:
 - C:
