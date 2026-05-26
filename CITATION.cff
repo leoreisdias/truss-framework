@@ -1,0 +1,21 @@
+cff-version: 1.2.0
+message: "If you use Truss in research, engineering documentation, or agent workflows, please cite this repository."
+title: "Truss: A Framework for Engineering Trade-offs in Product Systems"
+authors:
+  - given-names: "Leonardo"
+    family-names: "Reis Dias"
+version: "0.3.0-research-beta"
+date-released: "2026-05-26"
+repository-code: "https://github.com/leoreisdias/truss-framework"
+url: "https://github.com/leoreisdias/truss-framework"
+license: "Apache-2.0 AND CC-BY-4.0"
+abstract: "Truss is a research-beta framework for evaluating engineering trade-offs in product systems. It treats software quality as a decision problem organized around Maintainability, Strategy, Clarity, and Performance, with Security handled as a transversal boundary constraint. The repository includes the framework documentation and an evolving LLM/agent skill adapter; field validation and case studies are still in progress."
+keywords:
+  - engineering trade-offs
+  - software quality
+  - decision framework
+  - maintainability
+  - strategy
+  - clarity
+  - performance
+  - LLM agents

@@ -1,83 +1,171 @@
-# truss-framework
+# Truss Framework
 
-Truss evaluation skill for trade-off analysis in product engineering decisions.
+Truss is a working framework for evaluating engineering trade-offs in product systems.
 
-## What this skill does
+It treats software quality as a decision problem, not a static property. The goal is to help teams replace vague adjectives like "clean", "scalable", or "enterprise-ready" with falsifiable trade-off statements, explicit constraints, and decisions that can be revisited later.
 
-Truss gives teams a shared, falsifiable language for decision quality:
+## Status
 
-- **M**aintainability
-- **S**trategy
-- **C**larity
-- **P**erformance
+Truss is currently a research beta.
 
-Instead of arguing in adjectives ("clean", "scalable"), the skill pushes evidence-backed trade-offs, explicit constraints, and revisitable decisions.
+The framework core is intended to stay stable while the surrounding artifacts evolve:
 
-## Core principle
+- the paper explains the theory and research direction,
+- the skill helps LLM agents apply the framework in real work,
+- the examples and field notes will grow as the framework is tested.
 
-Quality is a decision problem, not a static property.  
-The right profile depends on context, horizon, and constraints.
-Scoring is optional: use it when ranking helps; otherwise keep a narrative trade-off memo.
+The skill may change more often than the framework. Agent prompts need to adapt as models and workflows change; that does not necessarily mean the Truss model itself changed.
 
-## Required flow (before scoring)
+## The Core Idea
 
-1. Declare context and mode (comparison, single-artifact review, investigation, discussion insight).
-2. Lock the optimization statement:
-   - "We optimize for X over Y for next N months."
-3. Declare pillar weights (`M/S/C/P` totaling `100%`).
-4. Declare non-negotiables (security baseline, migration constraints, governance constraints).
-5. Run boundary checks (security is transversal and non-negotiable).
-6. Evaluate with evidence per pillar (`M/S/C/P`) using either:
-   - a `0–5` scorecard (when scoring inputs are complete), or
-   - a narrative trade-off memo (no numeric scores).
-7. Run contamination test (`S` vs `P` claim hygiene).
-8. Run sensitivity pass (strategy-first and runtime-first when ranking is contested).
-9. State rank-reversal conditions explicitly for comparison mode.
+Quality is not something code simply has. Quality is the outcome of repeated decisions made under constraints.
 
-## Security model boundary
+Truss organizes those decisions around four pressures:
 
-Security is intentionally not a fifth pillar.  
-It is a transversal boundary constraint that must hold before trade-off scoring.
+- **Maintainability (DX):** how safely and cheaply the system can change.
+- **Strategy (product):** how well today's choice solves the problem and keeps future paths open.
+- **Clarity (DX):** how quickly and accurately an engineer can build the right mental model.
+- **Performance (UX/runtime):** how well the system behaves under real workloads.
 
-## Repository structure
+The point is not to score everything perfectly. The point is to name the tension, choose a coherent profile for the context, and write down what the team is intentionally accepting.
 
-- `SKILL.md`: trigger + workflow entry point
-- `agents/openai.yaml`: UI metadata
-- `references/OVERVIEW.md`: framework intent and boundaries
-- `references/RUBRIC.md`: 0-5 rubric by pillar
-- `references/SCORING.md`: scoring process and gates
-- `references/TEMPLATES.md`: reusable output templates
-- `references/CHECKLISTS.md`: fast execution checklists
-- `references/EXAMPLES.md`: worked examples and benchmark cases
-- `references/ANTI-PATTERNS.md`: common failure modes and corrections
+## What Truss Is For
 
-## Typical outputs
+Use Truss when a decision has enough weight that vague preference is not good enough:
 
-- Truss scorecard with evidence
-- Option comparison with explicit trade-offs
-- Single-artifact review memo (PR/code/design)
-- Investigation insight memo (bug/incident)
-- Recommendation with non-negotiables and revisit trigger
-- Rank-reversal conditions (for comparison decisions)
+- comparing implementation options,
+- reviewing a PR or design,
+- writing an RFC or ADR,
+- investigating an incident or recurring bug,
+- deciding whether to optimize for speed, flexibility, clarity, cost, or future change.
 
-## Quick prompt starter
+Truss is especially useful when multiple answers are plausible and the real question is: **what are we optimizing for, for how long, and what are we willing to give up?**
 
-Use one of these before asking for scoring:
+## What Truss Is Not
+
+Truss is not:
+
+- a checklist that proves quality,
+- a scoring game that replaces judgment,
+- a purity test for architecture,
+- or a way to justify personal taste as strategy.
+
+Scores are optional. Evidence is not.
+
+## The Skill
+
+This repository includes an agent skill at [`truss-skill/`](./truss-skill/).
+
+The skill is an operational adapter for applying Truss with LLM agents. It supports:
+
+- option comparison,
+- single-artifact review,
+- bug or incident investigation,
+- discussion insight,
+- ADR-style decision records.
+
+Before scoring, the skill asks for:
+
+1. context and mode,
+2. an optimization statement,
+3. pillar weights,
+4. non-negotiables,
+5. boundary checks,
+6. evidence per pillar.
+
+Example prompt:
 
 ```text
 Evaluate Option A vs Option B using Truss.
-Optimization statement: optimize provider switchability over short-term latency for next 12 months.
+Optimization statement: optimize provider switchability over short-term latency for the next 12 months.
 Weights: M=25 S=45 C=20 P=10.
 Non-negotiables: OWASP baseline, no PII exposure, single provider abstraction.
 ```
 
+## Paper
+
+The paper should live in this repository. The scaffold is in [`paper/`](./paper/), but no draft PDF or source file is committed yet.
+
+Recommended shape:
+
 ```text
-Review this PR using Truss.
-Mode: single-artifact review.
-Optimization statement: optimize safe migration over feature velocity for next 2 months.
-Weights: M=35 S=30 C=20 P=15.
-Non-negotiables: no PII exposure, rollback path is explicit.
+paper/
+  truss-framework.tex
+  truss-framework.pdf
+  references.bib
 ```
+
+Keeping the paper next to the skill makes the relationship explicit:
+
+- the paper is the canonical research layer,
+- the skill is the applied LLM/agent layer,
+- field examples can point back to both.
+
+If the paper is still changing quickly, commit a clearly dated or versioned PDF snapshot only once the structure is comfortable enough to review publicly.
+
+## Citation
+
+If you use Truss in research, engineering documentation, or agent workflows, cite the repository using [`CITATION.cff`](./CITATION.cff).
+
+Current public-beta citation target:
+
+```text
+Truss: A Framework for Engineering Trade-offs in Product Systems
+Leonardo Reis Dias
+Version: 0.3.0-research-beta
+Repository: https://github.com/leoreisdias/truss-framework
+```
+
+## License
+
+Truss uses a dual-license structure:
+
+- Apache-2.0 for reusable code-like and agent-skill materials.
+- CC BY 4.0 for research and documentation materials.
+
+See [`LICENSE.md`](./LICENSE.md) for the license map.
+
+## Repository Structure
+
+```text
+paper/
+  README.md
+truss-skill/
+  SKILL.md
+  agents/openai.yaml
+  references/
+    OVERVIEW.md
+    RUBRIC.md
+    SCORING.md
+    TEMPLATES.md
+    CHECKLISTS.md
+    EXAMPLES.md
+    ANTI-PATTERNS.md
+```
+
+Key files:
+
+- [`paper/README.md`](./paper/README.md): paper location and snapshot guidance.
+- [`truss-skill/SKILL.md`](./truss-skill/SKILL.md): skill entry point and workflow.
+- [`truss-skill/references/OVERVIEW.md`](./truss-skill/references/OVERVIEW.md): framework summary and boundaries.
+- [`truss-skill/references/RUBRIC.md`](./truss-skill/references/RUBRIC.md): 0-5 scoring guide by pillar.
+- [`truss-skill/references/SCORING.md`](./truss-skill/references/SCORING.md): scoring process and evidence requirements.
+- [`truss-skill/references/TEMPLATES.md`](./truss-skill/references/TEMPLATES.md): reusable output formats.
+- [`truss-skill/references/ANTI-PATTERNS.md`](./truss-skill/references/ANTI-PATTERNS.md): common failure modes and corrections.
+
+## Field Feedback Wanted
+
+Truss needs real usage more than polished agreement.
+
+Useful feedback includes:
+
+- examples where Truss clarified a decision,
+- examples where it felt too heavy,
+- cases where pillars overlapped or leaked into each other,
+- decisions where the recommendation changed after weights were declared,
+- before/after PR, RFC, ADR, or incident-review notes.
+
+The most useful reports are concrete: context, options, declared optimization, trade-offs, decision, and what happened afterward.
 
 ## Changelog
 

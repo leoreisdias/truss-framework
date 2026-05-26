@@ -4,6 +4,19 @@ All notable changes to this repository are documented in this file.
 
 The format follows Keep a Changelog principles, adapted for this skill repository.
 
+## [0.3.0-research-beta] - 2026-05-26
+
+### Added
+
+- Public research-beta repository framing for Truss.
+- Citation metadata through `CITATION.cff`.
+- Dual-license map with Apache-2.0 for reusable skill/code-like material and CC BY 4.0 for research/documentation material.
+- Paper scaffold under `paper/` without committing a draft PDF or source file.
+
+### Changed
+
+- README now points readers to citation, licensing, and paper-scaffold guidance.
+
 ## [0.2.2] - 2026-02-25
 
 ### Changed
