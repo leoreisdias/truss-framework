@@ -1,8 +1,16 @@
-# Truss Framework
+<p align="center">
+  <img src="./assets/truss-decision-field.png" alt="Four distinct forces held in tension around a central decision point, representing Truss's four pillars" width="100%">
+</p>
 
-Truss is a working framework for evaluating engineering trade-offs in product systems.
+<h1 align="center">Engineering quality is a decision.</h1>
 
-It treats software quality as a decision problem, not a static property. The goal is to help teams replace vague adjectives like "clean", "scalable", or "enterprise-ready" with falsifiable trade-off statements, explicit constraints, and decisions that can be revisited later.
+<p align="center">
+  <strong>Truss makes software trade-offs explicit across Maintainability, Strategy, Clarity, and Performance.</strong>
+</p>
+
+<p align="center">
+  Replace vague preferences with falsifiable trade-off statements, visible constraints, and decisions your team can revisit.
+</p>
 
 ## Status
 
