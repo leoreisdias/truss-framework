@@ -1,6 +1,6 @@
 ---
 name: truss-evaluation
-description: Evaluate decision quality using Truss, organized around Maintainability, Strategy, Clarity, and Performance, across option comparison, code/PR review, bug or incident investigation, architecture discussion, and decision records. Use when the user asks “which approach is better?”, requests a structured critique, or needs explicit trade-offs and next-step guidance.
+description: Evaluate consequential software-quality trade-offs through Maintainability, Strategy, Clarity, and Performance. Use for technical planning and architecture, code or PR review and grilling, bug or incident investigation, and decision records when the outcome materially affects those qualities.
 ---
 
 # Truss Evaluation
