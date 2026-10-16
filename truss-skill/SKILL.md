@@ -1,6 +1,6 @@
 ---
 name: truss-evaluation
-description: Evaluate consequential software-quality trade-offs through Maintainability, Strategy, Clarity, and Performance. Use for technical planning and architecture, code or PR review and grilling, bug or incident investigation, and decision records when the outcome materially affects those qualities.
+description: Use before settling consequential software-quality trade-offs, including shared-component ownership, new cross-module dependencies, architecture choices, and disputed review findings. Apply Maintainability, Strategy, Clarity, and Performance proportionately; routine local changes need no formal evaluation.
 ---
 
 # Truss Evaluation
