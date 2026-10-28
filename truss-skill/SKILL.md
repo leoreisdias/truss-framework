@@ -1,6 +1,6 @@
 ---
 name: truss-evaluation
-description: Use before settling consequential software-quality trade-offs, including shared-component ownership, new cross-module dependencies, architecture choices, and disputed review findings. Apply Maintainability, Strategy, Clarity, and Performance proportionately; routine local changes need no formal evaluation.
+description: Use when the user asks which software implementation approach to take, wants competing options compared, or asks whether a proposed engineering decision is justified. Also trigger when an architecture discussion or code review stalls over competing trade-offs.
 ---
 
 # Truss Evaluation
